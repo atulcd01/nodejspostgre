@@ -1,19 +1,5 @@
 const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'umzdzwajmiiodh',
-  host: 'ec2-54-228-251-117.eu-west-1.compute.amazonaws.com',
-  database: 'd29s1f2m4alq6u',
-  password: '0d57db64873652c9c4be50545e389accb356e0194ad6759ff2e7eb92f5c57ce2',
-  port: 5432,
-})
 
-/*const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'M8$tek12',
-  port: 5432,
-})*/
 
 const getUsers = (request, response) => {
   pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
